@@ -1,0 +1,89 @@
+PYTHON: 3.13.18 (main, Oct 26 2026, 15:28:15) [GCC 13.3.0]
+scikit-learn: 1.6.1 | econml: 0.17.0
+SHAPE AS LOADED: (995, 20)
+GRID size: 30
+
+==============================================================================
+TREATMENT: Gender (T0=0, T1=1, trim=False)
+==============================================================================
+  search n = 662 (of 995)
+  [Gender r0 o1] qualified 19/30 | selected (8, 0.1) | 177s elapsed | total 177s
+  [Gender r0 o2] qualified 5/30 | selected (20, 1.0) | 349s elapsed | total 349s
+  [Gender r0 o3] qualified 4/30 | selected (20, 0.25) | 524s elapsed | total 524s
+  [Gender r0 o4] qualified 8/30 | selected (10, 0.0) | 697s elapsed | total 697s
+  [Gender r0 o5] qualified 14/30 | selected (10, 0.25) | 873s elapsed | total 873s
+  [Gender r1 o1] qualified 20/30 | selected (8, 0.1) | 1050s elapsed | total 1050s
+  [Gender r1 o2] qualified 19/30 | selected (10, 0.25) | 1227s elapsed | total 1227s
+  [Gender r1 o3] qualified 23/30 | selected (10, 1.0) | 1403s elapsed | total 1403s
+  [Gender r1 o4] qualified 13/30 | selected (8, 0.2) | 1570s elapsed | total 1570s
+  [Gender r1 o5] qualified 20/30 | selected (20, 1.0) | 1749s elapsed | total 1749s
+  [Gender r2 o1] qualified 24/30 | selected (8, 1.0) | 1928s elapsed | total 1928s
+  [Gender r2 o2] qualified 14/30 | selected (8, 0.0) | 2104s elapsed | total 2104s
+  [Gender r2 o3] qualified 12/30 | selected (12, 0.2) | 2275s elapsed | total 2275s
+  [Gender r2 o4] qualified 8/30 | selected (10, 0.0) | 2451s elapsed | total 2451s
+  [Gender r2 o5] qualified 23/30 | selected (8, 0.25) | 2625s elapsed | total 2625s
+TREATMENT Gender DONE in 2625s
+
+==============================================================================
+TREATMENT: Location_1v0 (T0=0, T1=1, trim=False)
+==============================================================================
+  search n = 662 (of 995)
+  [Location_1v0 r0 o2] qualified 25/30 | selected (8, 0.25) | 61s elapsed | total 2686s
+  [Location_1v0 r1 o1] qualified 21/30 | selected (15, 1.0) | 125s elapsed | total 2750s
+  [Location_1v0 r1 o4] qualified 21/30 | selected (10, 1.0) | 239s elapsed | total 2864s
+  [Location_1v0 r2 o3] qualified 24/30 | selected (8, 1.0) | 355s elapsed | total 2980s
+TREATMENT Location_1v0 DONE in 355s
+
+==============================================================================
+TREATMENT: Location_2v0 (T0=0, T1=2, trim=False)
+==============================================================================
+  search n = 662 (of 995)
+  [Location_2v0 r0 o4] qualified 14/30 | selected (5, 1.0) | 61s elapsed | total 3041s
+  [Location_2v0 r0 o5] qualified 18/30 | selected (10, 0.0) | 180s elapsed | total 3160s
+  [Location_2v0 r1 o2] qualified 24/30 | selected (8, 0.25) | 299s elapsed | total 3279s
+  [Location_2v0 r1 o4] qualified 19/30 | selected (8, 0.1) | 414s elapsed | total 3394s
+  [Location_2v0 r2 o1] qualified 22/30 | selected (8, 0.2) | 590s elapsed | total 3570s
+TREATMENT Location_2v0 DONE in 590s
+
+==============================================================================
+TREATMENT: SchoolType (T0=0, T1=1, trim=True)
+==============================================================================
+  FULL-DATA overlap trim | n before 995 | n after 925
+  search n = 886 (of 925)
+  [SchoolType r0 o1] qualified 23/30 | selected (8, 0.25) | 115s elapsed | total 3685s
+  [SchoolType r0 o2] qualified 25/30 | selected (8, 1.0) | 233s elapsed | total 3803s
+  [SchoolType r0 o3] qualified 24/30 | selected (8, 0.1) | 405s elapsed | total 3975s
+  [SchoolType r1 o1] qualified 23/30 | selected (8, 0.25) | 573s elapsed | total 4143s
+  [SchoolType r1 o3] qualified 25/30 | selected (8, 1.0) | 746s elapsed | total 4316s
+  [SchoolType r1 o5] qualified 25/30 | selected (8, 1.0) | 808s elapsed | total 4378s
+  [SchoolType r2 o2] qualified 25/30 | selected (8, 1.0) | 923s elapsed | total 4493s
+  [SchoolType r2 o3] qualified 25/30 | selected (8, 1.0) | 1094s elapsed | total 4664s
+  [SchoolType r2 o5] qualified 19/30 | selected (12, 1.0) | 1210s elapsed | total 4780s
+TREATMENT SchoolType DONE in 1210s
+
+==============================================================================
+FINAL REPORT - outer-loop CI width by treatment and regime
+==============================================================================
+                                        mean        sd   n
+treatment    regime                                       
+Gender       A_adopted_leaf12_w025  0.168820  0.027518  15
+             A_baseline_leaf5_w0    0.199325  0.024975  15
+             B_nested_selected      0.173763  0.040205  15
+Location_1v0 A_adopted_leaf12_w025  0.285121  0.009437   4
+             A_baseline_leaf5_w0    0.297519  0.011163   4
+             B_nested_selected      0.287968  0.017174   4
+Location_2v0 A_adopted_leaf12_w025  0.236633  0.047149   5
+             A_baseline_leaf5_w0    0.302191  0.065743   5
+             B_nested_selected      0.266258  0.067915   5
+SchoolType   A_adopted_leaf12_w025  0.224256  0.029985   9
+             A_baseline_leaf5_w0    0.298983  0.056827   9
+             B_nested_selected      0.248712  0.033974   9
+
+SELECTION STABILITY per treatment:
+  Gender: outer folds with no qualifying config: 0/15 | distinct selections: 11
+  Location_1v0: outer folds with no qualifying config: 11/15 | distinct selections: 4
+  Location_2v0: outer folds with no qualifying config: 10/15 | distinct selections: 5
+  SchoolType: outer folds with no qualifying config: 6/15 | distinct selections: 4
+
+TOTAL RUNTIME: 4780s
+DONE
